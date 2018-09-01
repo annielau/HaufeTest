@@ -46,5 +46,6 @@
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-support:2.0a7" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-common:2.0a7" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-all:1.1" level="project" />
+    <orderEntry type="library" name="Maven: ru.stqa.selenium:webdriver-expected-conditions:1.0.41" level="project" />
   </component>
 </module>

@@ -3,7 +3,7 @@ Feature: LoginFeature
 
   Scenario: Login with valid username and password
     Given I navigate to the login page
-    And I enter the username "Test.barcelona" and password "TestBCN1"
+    And I enter the username "hreng" and password "umantis1"
     And I click login button
     Then I should see the WelcomePage
 

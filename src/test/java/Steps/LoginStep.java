@@ -5,7 +5,6 @@ import Base.BaseUtil;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import org.openqa.selenium.By;
 import pages.PageObject;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -36,11 +35,9 @@ public class LoginStep extends BaseUtil{
     @Then("^I should see the WelcomePage$")
     public void iShouldSeeTheWelcomePage() throws Throwable {
         System.out.println("Should see WelcomePage");
-        // PageObject page = new PageObject(base.Driver);
+        PageObject page = new PageObject(base.Driver);
         base.Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        WebElement el= base.Driver.findElement(By.cssSelector("div.c-site-header__navbar-title-container.u-truncate"));
-        Assert.assertEquals("Its not displayed", el.getText(), "Dashboard");
-
+        Assert.assertTrue("Welcome page is not displayed", page.lblWelcome.getText().contains("Welcome"));
     }
 
     @And("^I enter the username \"([^\"]*)\" and password \"([^\"]*)\"$")
