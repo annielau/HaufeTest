@@ -1,17 +1,14 @@
-package pages;
+package com.haufe.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
-
 public class PageObject {
 
-    public WebDriver Driver;
+    public static String URL = "https://recruitingapp-90412258.umantis.com/";
 
     public PageObject (WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -30,11 +27,20 @@ public class PageObject {
     @FindBy (how = How.ID, using = "customdatablock_151642")
     public WebElement lblWelcome;
 
+    @FindBy (how = How.ID, using = "customdatablock_1170115")
+    public WebElement lblApplication;
+
+//    @FindBy( how = How.ID, using = "actionbarlink_1169776")
+//    public WebElement btnEvaluationHR;
+
     @FindBy (how = How.CLASS_NAME, using = "form_content_label")
     public WebElement lblEvaluationHR;
 
     @FindBy (how = How.ID, using = "input_1169790")
     public WebElement txtComment;
+
+    @FindBy (how = How.ID, using = "Button_1169800")
+    public WebElement btnSave;
 
     @FindBy (how = How.ID, using = "mainnavlink_14839")
     public WebElement tabEvaluation;
@@ -53,6 +59,5 @@ public class PageObject {
         btnLogin.click();
     }
 
-    public String url= "https://recruitingapp-90412258.umantis.com/";
 
 }

@@ -1,48 +1,42 @@
-package Steps;
+package com.haufe.Steps;
 
-import Base.BaseUtil;
-// import cucumber.api.PendingException;
+import com.haufe.Base.BaseUtil;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import pages.PageObject;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-
+import com.haufe.pages.PageObject;
 import java.util.concurrent.TimeUnit;
 
 public class LoginStep extends BaseUtil{
 
     private BaseUtil base;
+    private PageObject page;
 
     public LoginStep(BaseUtil base){
         this.base = base;
+        this.page = new PageObject(base.Driver);
     }
 
     @Given("^I navigate to the login page$")
     public void iNavigateToTheLoginPage() throws Throwable {
-        PageObject page= new PageObject (base.Driver);
-        base.Driver.navigate().to(page.url);
+        base.Driver.navigate().to(PageObject.URL);
     }
 
 
     @And("^I click login button$")
     public void iClickLoginButton() throws Throwable {
-        PageObject page= new PageObject (base.Driver);
         page.clickLogin();
     }
 
     @Then("^I should see the WelcomePage$")
     public void iShouldSeeTheWelcomePage() throws Throwable {
-        System.out.println("Should see WelcomePage");
-        PageObject page = new PageObject(base.Driver);
         base.Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Assert.assertTrue("Welcome page is not displayed", page.lblWelcome.getText().contains("Welcome"));
     }
 
     @And("^I enter the username \"([^\"]*)\" and password \"([^\"]*)\"$")
     public void iEnterTheUsernameAndPassword(String username, String password) throws Throwable {
-        PageObject page= new PageObject (base.Driver);
         page.Login(username, password);
     }
 }

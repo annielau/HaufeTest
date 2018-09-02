@@ -1,6 +1,6 @@
-package Steps;
+package com.haufe.Steps;
 
-import Base.BaseUtil;
+import com.haufe.Base.BaseUtil;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,9 +16,10 @@ public class Hook extends BaseUtil {
     @Before
     public void InitializeTest ()
     {
-        System.out.println("Open browser");
+        String path = System.getProperty("user.dir");
+        String separator = System.getProperty("file.separator");
         //Chrome driver
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Usuario\\IdeaProjects\\Haufe_Test\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", path + separator + "chromedriver.exe");
         base.Driver = new ChromeDriver();
     }
 
