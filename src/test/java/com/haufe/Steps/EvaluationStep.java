@@ -21,8 +21,6 @@ public class EvaluationStep {
     public void iClickOnAnEmployeeFromTopApplicants() throws Throwable {
         Thread.sleep(3000);
          base.Driver.navigate().to(PageObject.URL + "Recruiting/Applications/190/976/Details");
-//        WebElement employee1 = base.Driver.findElement(By.cssSelector("body > div:nth-child(1) > div.rollover_img > a"));
-//        employee1.click();
     }
 
     @Then("^I should see the Employee Information Page$")
@@ -33,8 +31,7 @@ public class EvaluationStep {
     @And("^I click on Evaluation HR Department$")
     public void iClickOnEvaluationHRDepartment() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        // page.btnEvaluationHR.click();
-         base.Driver.navigate().to(PageObject.URL + "Recruiting/Applications/190/976/Details/QuickHandleApplication");
+        base.Driver.navigate().to(PageObject.URL + "Recruiting/Applications/190/976/Details/QuickHandleApplication");
     }
 
     @Then("^I should see the Evaluation HR Department Page$")

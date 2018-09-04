@@ -30,9 +30,6 @@ public class PageObject {
     @FindBy (how = How.ID, using = "customdatablock_1170115")
     public WebElement lblApplication;
 
-//    @FindBy( how = How.ID, using = "actionbarlink_1169776")
-//    public WebElement btnEvaluationHR;
-
     @FindBy (how = How.CLASS_NAME, using = "form_content_label")
     public WebElement lblEvaluationHR;
 
